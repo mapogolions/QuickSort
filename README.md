@@ -1,6 +1,6 @@
-#### Quick Sort
+### Quick Sort
 
-##### How to use
+#### How to use
 ```sh
 dotnet test
 dotnet build -c Release
