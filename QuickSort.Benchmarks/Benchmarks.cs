@@ -10,10 +10,13 @@ namespace QuickSort.Benchmarks
     [MaxColumn]
     public class Benchmarks
     {
-        private readonly IList<int> _dataset = RandomNumbersRange(-5_000_000, 5_000_000, 5_000_000).ToList();
+        private readonly IList<int> _dataset = RandomNumbersRange(-5_000_000, 5_000_000, 10_000_000).ToList();
 
         [Benchmark]
-        public void SequentialSort() => QuickSort.Sort(_dataset);
+        public void SequentialQuickSort() => QuickSort.Sort(_dataset);
+
+        [Benchmark]
+        public void ParallelQuickSort() => QuickSort.ParallelSort(_dataset, RecursiveDepth(Environment.ProcessorCount));
 
         private static int[] RandomNumbersRange(int min, int max, int size)
         {
@@ -25,5 +28,7 @@ namespace QuickSort.Benchmarks
             }
             return bag;
         }
+
+        private int RecursiveDepth(int processorCount) => (int) (Math.Log2(processorCount) + 4);
     }
 }
