@@ -4,9 +4,6 @@
 
     internal static class Program
     {
-        internal static void Main(string[] args)
-        {
-            BenchmarkRunner.Run<Benchmarks>();
-        }
+        internal static void Main(string[] args) => BenchmarkRunner.Run<Benchmarks>();
     }
 }
