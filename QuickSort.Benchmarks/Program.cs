@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace QuickSort.Benchmarks
+﻿namespace QuickSort.Benchmarks
 {
+    using System;
+
     class Program
     {
         static void Main(string[] args)
