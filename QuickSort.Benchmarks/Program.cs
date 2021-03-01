@@ -1,12 +1,12 @@
 ﻿namespace QuickSort.Benchmarks
 {
-    using System;
+    using BenchmarkDotNet.Running;
 
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        internal static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            BenchmarkRunner.Run<Benchmarks>();
         }
     }
 }
