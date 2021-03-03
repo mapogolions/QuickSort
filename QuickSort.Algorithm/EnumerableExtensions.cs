@@ -9,7 +9,7 @@
             Predicate<TSource> test)
         {
             var succeeded = new List<TSource>();
-            var red = new List<TSource>();
+            var failed = new List<TSource>();
             foreach (var item in @this)
             {
                 if (test(item))
@@ -17,9 +17,9 @@
                     succeeded.Add(item);
                     continue;
                 }
-                red.Add(item);
+                failed.Add(item);
             }
-            return new Tuple<IList<TSource>, IList<TSource>>(succeeded, red);
+            return new Tuple<IList<TSource>, IList<TSource>>(succeeded, failed);
         }
     }
 }
